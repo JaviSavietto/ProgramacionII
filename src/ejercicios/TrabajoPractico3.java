@@ -86,6 +86,28 @@ public class TrabajoPractico3 {
      * y agregar un nuevo detalle que incluya una mercaderia nueva
      */
     public void ejercicio3() {
+        Pedido pedido= new Pedido();
+        pedido=ejercicio2();
+        Mercaderia mercaderia3 = new Mercaderia();
+        mercaderia3.setCodigo("COD003");
+        mercaderia3.setNombre("Azucar");
+        mercaderia3.setPeso(1);
+        mercaderia3.setValor(10);
+        
+        DetallePedido detalle3 = new DetallePedido();
+        detalle3.setMercaderia(mercaderia3);
+        detalle3.setCantidad(2);
+        
+        //List<DetallePedido> listado = new ArrayList();
+        //listado.add(detalle3);
+        pedido.getDetalles().add(detalle3);
+        
+        for (int i = 0; i < pedido.getDetalles().size(); i++) {
+            System.out.println("Mercaderia: " + pedido.getDetalles().get(i).getMercaderia().getNombre());
+            System.out.println("Cantidad: "+ pedido.getDetalles().get(i).getCantidad());
+        }
+        
+        
         
     }
 }

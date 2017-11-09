@@ -80,7 +80,25 @@ public class TrabajoPractico4 {
      * El ID empieza en 1
      * @param clientes
      */
-    public void ejercicio3() {
+    public List<Cliente> ejercicio3(int cantidadClientes) {
+         List<Cliente> clientes = new ArrayList();
+         
+        for (int i = 1; i <= cantidadClientes; i+=2) {
+            Cliente cliente = new Cliente();
+            cliente.setId(i);
+            cliente.setNombre("nombre_" + i);
+            cliente.setEmail("email_" + i + "@gmail.com");
 
+            clientes.add(cliente);
+        }
+
+        for(Cliente cliente : clientes) {
+            System.out.println("Cliente: " + cliente.getId());
+            System.out.println("Nombre: " + cliente.getNombre());
+            System.out.println("Email: " + cliente.getEmail());
+            System.out.println("");
+        }
+
+        return clientes;
     }
 }
